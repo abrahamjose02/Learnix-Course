@@ -100,6 +100,15 @@ export class CourseController{
         }
       };
 
+      editReview = async (data: any) => {
+        try {
+          return this.service.editReview(data);
+        } catch (e: any) {
+          console.log(e);
+        }
+      };
+      
+
     
       searchCourses = async (searchTerm: string) => {
         try{
@@ -114,6 +123,14 @@ export class CourseController{
           return this.service.getUserCourses(userIds)
         }catch(e: any){
           console.log(e);
+        }
+      }
+
+      getCourseAnalytics = async(instructorId:string) => {
+        try {
+          return this.service.getCourseAnalytics(instructorId);
+        } catch (e:any) {
+          console.log(e)
         }
       }
 }
